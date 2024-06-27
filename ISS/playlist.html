@@ -1,0 +1,145 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="stylea.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    td
+    {
+      color: peachpuff;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+
+    }
+    tr
+    {
+      transition: transform ease 0.3s;
+    }
+    tr:hover
+    {
+      transform: scale(1.1);
+    }
+    button:hover
+    {
+      background-color: grey;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="home.html">home</a></li>
+      <li><a href="artist.html">Artists</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="kk" href="a.html">Search</a></li>
+      <li><a href="artistspotlightserena.html">Artist Spotlight</a></li>
+      <li><a href="playlist.html">PlayList</a></li>
+    </ul>
+  </nav>
+  <div class="background-image2"></div>
+  <h1 class="glow2">Your PlayList</h1>
+  <div class="playlist" style=" text-align: center;padding-left: 10%;">
+    <table style="text-align: center;" class="table">
+      <thead>
+        <tr>
+          <th class="headrow">
+            Artist Name
+          </th>
+          <th class="headrow">
+            Song Name
+          </th>
+          <th class="headrow">
+            Duration
+          </th>
+          <th class="headrow">
+            Remove
+          </th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div class="abt" style="border-top: thick solid white;">
+    <p class="abtext">
+        Welcome to Deathly Decibels - your ultimate destination for all things dark and macabre in the world of
+        music.<br> Discover new and haunting melodies every day, and unleash your inner darkness with us.   
+        Don't forget
+        to rate your favorite songs and help curate the ultimate playlist of deathly decibels.<br> To learn more about
+        our site and the team behind it, visit our About page
+    </p>
+    <p style="font-family:'Cabin Sketch', cursive; color: white; text-align: center; font-size: 50px; margin-top: 0;">
+        JOIN THE DARK SIDE
+    </p>
+    <div style="float: left;  width: 400px;height: 50px;font-size: 45px; margin-top: 0;margin-left: 700px; color: white;text-align: center;">
+      <a href="about.html" style="color: white;font-family:'Acme',sans-serif;" >About Us</a>
+  </div>
+  <script>
+    // Fetch data from server
+    fetch('http://localhost:8000/api')
+  .then(response => response.json())
+  .then(data => {
+    const parent=document.getElementsByClassName("playlist")[0]
+    const table = document.getElementsByClassName("table")[0];
+    console.log(data.length)
+    height=150*(data.length)
+    parent.style.height=`${height}px`
+    for (let i = 0; i < data.length; i++) {
+      console.log(data[i]);
+      const row = document.createElement("tr");
+      const name = document.createElement("td");
+      const artist = document.createElement("td");
+      const duration = document.createElement("td");
+      const remove = document.createElement("td");
+      const removeBtn = document.createElement('button');
+      removeBtn.textContent = 'Remove';
+      removeBtn.classList.add('bt');
+      removeBtn.id = data[i]['id'];
+      remove.appendChild(removeBtn);
+      name.textContent = data[i]['duration'];
+      artist.textContent = data[i]['artist'];
+      duration.textContent = data[i]['kk'];
+      row.appendChild(name);
+      row.appendChild(artist);
+      row.appendChild(duration);
+      row.appendChild(remove);
+      table.appendChild(row);
+      // console.log(data[i]['id']);
+     
+      
+      removeBtn.addEventListener('click', (event) => {
+        
+        const rowIndex = event.target.parentElement.parentElement.rowIndex;
+        console.log(1);
+        table.deleteRow(rowIndex);
+        for (let j = rowIndex; j < table.rows.length; j++) {
+          table.rows[j].rowIndex = j;
+        }
+
+        dict=data[i]
+
+        const options = {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data[i])
+          };
+
+          fetch('http://localhost:8000/api/delete',options)
+              .then(response => response.json())
+              .then(data => {  
+                  console.log("done");
+           });
+
+
+      });
+    }
+  })
+  .catch(error => {
+    console.error(error);
+  });
+  </script>
+</body>
+
+</html>

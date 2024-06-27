@@ -1,0 +1,296 @@
+<html>
+
+<head>
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');
+
+    nav {
+        background-color: black;
+        height: 60px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        /* border: thick solid white; */
+    }
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    nav li {
+        display: inline-block;
+    }
+
+    nav li a {
+        display: block;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Roboto", sans-serif;
+        transition: background-color 0.3s ease-in-out;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-bottom: 2px solid transparent;
+        position: relative;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    nav li a:after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        transform: scale(0);
+        transition: transform 0.3s ease-in-out;
+    }
+
+
+    nav li a:hover:after,
+    nav li a:focus:after {
+        transform: scale(1);
+        animation-name: pop-out;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes pop-out {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale(1.2);
+        }
+    }
+
+    /* background: url('') no-repeat center center fixed; */
+    /* Additional styles for improved aesthetics */
+    /* body {
+        background-image: url('https://wallpaper-house.com/data/out/8/wallpaper2you_233380.jpg');
+        background-size: cover;
+        position: relative; */
+    /* Make the body element a positioning context */
+    /* } */
+
+    .overlay {
+        /* position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Set the overlay color and opacity */
+        /* filter: blur(5px); */
+        /* Add the blur effect */
+        /* z-index: -1; */
+        /* Put the overlay behind the navigation bar */
+        background-image: url('https://images.squarespace-cdn.com/content/v1/563761eae4b0df458aa0929b/1526718179304-NR3ZHVONAWJTFOZTGSNW/Imagine_Dragons_Black_of_Hearts_1.jpg');
+        background-size: cover;
+        /* background-color: black; */
+        /* background-attachment: fixed; */
+        /* background: no-repeat center center fixed; */
+        filter: blur(2px);
+        /* Change the blur radius to your preference */
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .stalbum {
+        /* border: thick solid red; */
+        /* float: left; */
+        margin-top: 15%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10PX;
+        /* justify-content: center; */
+        align-items: center;
+        height: 400px;
+        /* text-decoration: ; */
+    }
+
+    .stalbum1 {
+        /* border: thick solid red; */
+        /* float: left; */
+        margin-top: 10%;
+        padding-left: 7%;
+        display: flex;
+        flex-wrap: wrap;
+        /* padding: 10PX; */
+        /* justify-content: center; */
+        /* align-items: center; */
+        height: 100px;
+        /* text-decoration: ; */
+    }
+
+    .abt {
+        height: 300px;
+        margin-top: 20%;
+    }
+
+    body {
+        background-color: black;
+        background-image: linear-gradient(black,rgb(45, 1, 1),black);
+
+
+    }
+
+    .pop {
+        cursor: pointer;
+        display: block;
+        -webkit-transition-property: all;
+        -webkit-transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease;
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+    }
+
+    .pop:hover {
+        border: solid thick pink;
+        transform: scale(1.3);
+        filter: grayscale(0%);
+        -webkit-filter: grayscale(0%);
+        
+    }
+    .abtext
+    {
+        color: white;
+        padding: 5px;
+        text-align: center;
+        font-family: 'Acme', sans-serif;
+        font-size: 20px;
+
+        
+    }
+    
+
+    /* @import url('https://fonts.googleapis.com/css2?family=Rye&display=swap'); */
+</style>
+<style>
+    /* @import url('https://fonts.googleapis.com/css2?family=Rye&display=swap'); */
+
+    @import url('https://fonts.googleapis.com/css2?family=Ruslan+Display&family=Rye&display=swap');
+</style>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
+</style>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+  </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap');
+  </style>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="home.html">home</a></li>
+            <li><a href="artist.html">Artists</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a  href="a.html">Search</a></li>
+            <li><a href="playlist.html">Playlist</a><li>
+            <li><a href="artistspotlightserena.html">Artist Spotlight</a></li>
+            
+            
+        </ul>
+    </nav>
+    <div class="overlay"></div>
+    <div class="stalbum1">
+        <p style="color:white;font-size: 100px; margin-top: 0;font-family:'Rye';">
+            Imagine Dragons
+        </p>
+
+    </div>
+
+    <div class="stalbum">
+        <div class="pop"
+            style="float: left;border:white solid thick;margin-left: 100px;z-index: 5;height: 300px;width: 300px;text-align: center;">
+            <a href="mercury.html"><img src="https://linkstorage.linkfire.com/medialinks/images/567f3b99-7f1c-438d-9bff-f5681169cfd6/artwork-440x440.jpg"
+                style="height: 300px;width: 300px;"></a>
+            <p style="z-index: 8;color:white;font-family:'Rye';font-size:40px;margin-bottom: 0;">MERCURY - Acts 1 & 2</p>
+            <p style="z-index: 8;color:white;font-family:'Vast';font-size:40px;margin-top: 0;margin-bottom: 10px;">(2022)</p>
+            <p style="z-index: 8;color:white;font-family:'Rye';font-size:20px;margin-top: 0;">Number of Songs:14</p>
+
+        </div>
+        <div class="pop"
+            style="float: right;border:white solid thick;margin-left: 180px;z-index: 5;height: 300px;width: 300px;text-align: center;">
+           <a href="origins.html"> <img src="https://upload.wikimedia.org/wikipedia/en/9/95/Origins_cover.png"
+                style="height: 300px;width: 300px;"></a>
+            <p style="z-index: 8;color:white;font-family:'Rye';font-size:40px;margin-bottom: 0;">ORIGINS</p>
+            <p style="z-index: 8;color:white;font-family:'Vast';font-size:40px;margin-top: 0;margin-bottom: 10px;">(2018)</p>
+            <p style="z-index: 8;color:white;font-family:'Rye';font-size:20px;margin-top: 0;">Number of Songs:15</p>
+
+        </div>
+        <div class="pop"
+            style="float: right;border:white solid thick;margin-left: 180px;z-index: 5;height: 300px;width: 300px;text-align: center;">
+          <a href="evolve.html">  <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/916R9qiMCOL._SL1500_.jpg"
+                style="height: 300px;width: 300px;"></a>
+            <p style="z-index: 8;color:white;font-family:'Rye';font-size:40px;margin-bottom: 0;">EVOLVE</p>
+            <p style="z-index: 8;color:white;font-family:'Vast';font-size:40px;margin-top: 0;margin-bottom: 10px;">(2017)</p>
+            <p style="z-index: 8;color:white;font-family:'Rye';font-size:20px;margin-top: 0;">Number of Songs:12</p>
+
+        </div>
+    </div>
+
+    <div class="stalbum">
+        <div class="pop"
+            style="float: left;border: thick white solid;margin-left: 350px;z-index: 5;height: 300px;width: 300px;text-align: center;">
+           <a href="smoke.html"> <img src="https://www.imaginedragonsmusic.com/files/2018/10/release_201810_d3acaeb069f37d8e257221f7224c813c5fa6024e.jpg"
+                style="height: 300px;width: 300px;"></a>
+            <p style="z-index: 8;color:white;font-family:'Rye';font-size:40px;margin-bottom: 0;">SMOKE + MIRRORS</p>
+            <p style="z-index: 8;color:white;font-family:'Vast';font-size:40px;margin-top: 0;margin-bottom: 10px;">(2014)</p>
+            <p style="z-index: 8;color:white;font-family:'Rye';font-size:20px;margin-top: 0;">Number of Songs:13</p>
+        </div>
+        <div class="pop"
+            style="float: right;border: thick white solid;margin-left:170px;z-index: 5;height: 300px;width: 300px;text-align: center;">
+            <a href="nightvisions.html"><img src="https://www.udiscovermusic.com/wp-content/uploads/2022/07/Imagine-Dragons-Night-Visions-Expanded-Edition-Cover-Courtesy_-Interscope-Records.jpg"
+                style="height: 300px;width: 300px;"></a>
+            <p style="z-index: 8;color:white;font-family:'Rye';font-size:40px;margin-bottom: 0;">NIGHT VISIONS</p>
+            <p style="z-index: 8;color:white;font-family:'Vast';font-size:40px;margin-top: 0;margin-bottom: 10px;">(2012)</p>
+            <p style="z-index: 8;color:white;font-family:'Rye';font-size:20px;margin-top: 0;">Number of Songs:12</p>
+
+        </div>
+
+    </div>
+    <div class="abt" style="border-top: thick solid white;">
+        <p class="abtext">
+            Welcome to Deathly Decibels - your ultimate destination for all things dark and macabre in the world of
+            music.<br> Discover new and haunting melodies every day, and unleash your inner darkness with us.   
+            Don't forget
+            to rate your favorite songs and help curate the ultimate playlist of deathly decibels.<br> To learn more about
+            our site and the team behind it, visit our About page
+        </p>
+        <p style="font-family:'Cabin Sketch', cursive; color: white; text-align: center; font-size: 50px; margin-top: 0;">
+            JOIN THE DARK SIDE
+        </p>
+        <div style="float: left;  width: 400px;height: 50px;font-size: 45px; margin-top: 0;margin-left: 600px; color: white;text-align: center;">
+            <a href="about.html" style="color: white;font-family:'Acme',sans-serif;" >About Us</a>
+        </div>
+        </div>
+
+
+    </div>
+
+
+    <script src="nav.js"></script>
+</body>
+
+</html>

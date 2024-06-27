@@ -1,0 +1,651 @@
+<html>
+
+<head></head>
+<style>
+    .topheading {
+
+        color: white;
+        font-size: large;
+        font-size: xx-large;
+        font-style: italic;
+        text-align: center;
+        margin-top: 0%;
+        padding-top: 0.3%;
+        position: relative;
+        font-family: cursive;
+    }
+
+    .topimg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        size: 100%;
+
+        /* display: block; */
+        padding-bottom: 0%;
+        margin-bottom: 0%;
+        vertical-align: bottom;
+    }
+
+    .Containertop {
+        background-color: black;
+        /* overflow: hidden; */
+        /* display: block; */
+        /* line-height: 0%; */
+
+        /* border: thick solid pink; */
+    }
+
+    .Containertop img {
+        vertical-align: bottom;
+    }
+
+    .pic1 {
+        padding-top: 5%;
+        position: relative;
+        float: left;
+        width: 35%;
+        padding-left: 10%;
+        color: white;
+        perspective: 1000px;
+        height: 600px;
+        /* border: thick solid red; */
+        /* border: thick solid palegoldenrod; */
+
+    }
+   
+
+    .pic2 {
+        padding-top: 5%;
+        position: relative;
+        float: right;
+        width: 35%;
+        /* padding-left: %; */
+        padding-right: 8%;
+        color: white;
+        perspective: 1000px;
+        height: 600px;
+        /* object-fit: cover; */
+        /* border: thick solid red; */
+        /* border: thick solid palegoldenrod; */
+
+    }
+
+    .pic1text {
+        padding-top: 20%;
+        position: relative;
+        float: right;
+        width: 35%;
+        padding-right: 10%;
+        color: mintcream;
+        perspective: 1000px;
+        height: 600px;
+        /* border: thick white solid; */
+        padding-bottom: 0%;
+        height: 65%;
+    }
+
+    .pic2text {
+        padding-top: 10%;
+        position: relative;
+        float: left;
+        padding-right: 5%;
+        width: 35%;
+        color: mintcream;
+        perspective: 1000px;
+        height: 590px;
+        /* border: thick white solid; */
+        padding-left: 8%;
+    }
+
+    .hovering {
+        transition: 0.8s;
+        transform-style: preserve-3d;
+    }
+
+    .imgart {
+        border: thick solid white;
+    }
+
+    .pic1:hover .hovering {
+        transform: rotateY(180deg);
+    }
+
+    .frontbox {
+        position: absolute;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        width: 100%;
+        height: 100%;
+    }
+
+    .backbox {
+
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        width: 100%;
+        height: 100%;
+    }
+
+    .flip-box {
+        background-color: transparent;
+        width: 500px;
+        height: 450px;
+        border: 1px solid #f1f1f1;
+        perspective: 1000px;
+        margin-bottom: 5%;
+        /* Remove this if you don't want the 3D effect */
+    }
+
+    /* This container is needed to position the front and back side */
+    .flip-box-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+
+    /* Do an horizontal flip when you move the mouse over the flip box container */
+    .flip-box:hover .flip-box-inner {
+        transform: rotateY(180deg);
+    }
+
+    /* Position the front and back side */
+    .flip-box-front,
+    .flip-box-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        /* Safari */
+        backface-visibility: hidden; 
+    }
+
+    /* Style the front side (fallback if image is missing) */
+    .flip-box-front {
+        background-color: black;
+        color: black;
+    }
+
+    /* Style the back side */
+    .flip-box-back {
+        background-color: black;
+        color: white;
+        transform: rotateY(180deg);
+        font-size: x-large;
+    }
+
+    .IID {
+        font-size: xx-large;
+        /* margin-top: auto; */
+        /* padding-top: 10%; */
+        color: fuchsia;
+        margin-right: 10.5%;
+        font-family: cursive;
+    }
+
+    .albumlink {
+        font-size: xx-large;
+        margin-top: 18%;
+        padding-top: 10%;
+        color: indianred;
+        /* margin-right: 28.5%; */
+        font-family: cursive;
+    }
+
+    .YouTube {
+        font-size: xx-large;
+        margin-top: 18%;
+        padding-top: 10%;
+        color: RED;
+        /* margin-right: 28.5%; */
+        font-family: cursive;
+    }
+
+    .name {
+        font-size: xx-large
+    }
+
+    
+</style>
+<style>
+    nav {
+      background-color: black;
+      height: 60px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+      /* border: thick solid white; */
+    }
+  
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      text-align: center;
+    }
+  
+    nav li {
+      display: inline-block;
+    }
+  
+    nav li a {
+      display: block;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      font-family: "Roboto", sans-serif;
+      transition: background-color 0.3s ease-in-out;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-bottom: 2px solid transparent;
+      position: relative;
+      padding-left: 100px;
+        padding-right: 100px;
+    }
+    .kk {
+        display: block;
+        color: #fff;
+        text-align: center;
+        box-shadow: inset 0px 0px 5px 5px white;
+        padding: 20px;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Roboto", sans-serif;
+        transition: background-color 0.3s ease-in-out;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-bottom: 2px solid transparent;
+        position: relative;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+  
+    nav li a:after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      transform: scale(0);
+      transition: transform 0.3s ease-in-out;
+    }
+  
+
+  
+    nav li a:hover:after,
+    nav li a:focus:after {
+      transform: scale(1);
+      animation-name: pop-out;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+    } 
+  
+    @keyframes pop-out {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1.2);
+      }
+    }
+  
+    /* Additional styles for improved aesthetics */
+    body {
+      margin-top: 60px;
+      background-color: #eee;
+      font-family: 'Indie Flower', cursive;
+      padding-bottom: 100px;
+      /* background-color: black; */
+      background-image: linear-gradient(black,rgb(73, 2, 2),black);
+      /* background: url(https://c4.wallpaperflare.com/wallpaper/757/235/802/music-background-dark-vinyl-wallpaper-preview.jpg); */
+    }
+    .abtext
+    {
+        color: white;
+        padding: 5px;
+        text-align: center;
+        font-family: 'Acme', sans-serif;
+        font-size: 20px;
+
+
+    }
+    .abt {
+        height: 300px;
+
+        z-index: 909;
+        background-color: black;
+        /* position:absolute; */
+    }
+
+  </style>
+  <style>
+    /* @import url('https://fonts.googleapis.com/css2?family=Rye&display=swap'); */
+
+    @import url('https://fonts.googleapis.com/css2?family=Ruslan+Display&family=Rye&display=swap');
+</style>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
+</style>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+  </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap');
+  </style>
+
+  
+
+<body>
+    <div class="Containertop">
+        <div class="topimg">
+            <!-- <img src="https://img.freepik.com/free-vector/musical-notes-pattern-black-background_1017-32303.jpg?w=360"
+                width="100%">
+            </img>
+            <img src="https://img.freepik.com/free-vector/musical-notes-pattern-black-background_1017-32303.jpg?w=360"
+                width="100%">
+            </img>
+            <img src="https://img.freepik.com/free-vector/musical-notes-pattern-black-background_1017-32303.jpg?w=360"
+                width="100%">
+            </img> -->
+            <nav >
+                <ul>
+
+                  <li><a href="home.html">HOME</a></li>
+                  <li><a class="kk" href="artist.html">artists</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a  href="a.html">Search</a></li>
+                  <li><a href="playlist.html">Playlist</a><li>
+                  <li><a href="artistspotlightserena.html">Artist Spotlight</a></li>
+                 
+                  
+                </ul>
+            </nav>
+              
+        
+
+        </div>
+        <div class="topHeading">
+            <h1>
+                OUR TOP ARTISTS
+            </h1>
+        </div>
+
+        <div class="pic1">
+            <h2 class="name">
+                1. Justin Bieber
+            </h2>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <img src="https://imageio.forbes.com/specials-images/imageserve/611d2358ae36f5a447f23b18/0x0.jpg?format=jpg&crop=1925,1283,x0,y57,safe&width=1200" alt="Paris"
+                            style="width:500px;height:450px">
+                    </div>
+                    <div class="flip-box-back">
+                        <a href="justin.html"><img src="https://wp.missmalini.com/wp-content/uploads/2015/12/justinb-1.jpg"
+                                style=" opacity: 0.75;width:500px;height:400px "></a>
+                        <a href="https://www.instagram.com/justinbieber/"> <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png"
+                                style="width:40px;height: 40px;float: left;margin-left: 20px;margin-top: 5px;margin-right: 15px;"></a>
+                        <a href="https://open.spotify.com/artist/1uNFoZAHBGtllmzznpCI3s?si=Lyjn3EjTT--m9YyDS-oJIA"> <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Spotify_App_Logo.svg/2048px-Spotify_App_Logo.svg.png"
+                                style="width:40px;height: 40px;float: left;margin-top: 5px;margin-right: 15px;"></a>
+                        <!-- <img src="https://w7.pngwing.com/pngs/231/63/png-transparent-album-computer-icons-music-phonograph-record-design-album-photography-logo.png"
+                            style="width:50px;height: 40px;float: left;margin-top: 5px;margin-right: 15px;"> -->
+                        <a href="https://www.youtube.com/channel/UCIwFjwMjI0y7PDBVEO9-bkQ"><img
+                                src="https://www.logo.wine/a/logo/YouTube/YouTube-Icon-Full-Color-Logo.wine.svg"
+                                style="width:50px;height: 40px;float: left;margin-top: 5px;margin-right: 15px;"></a>
+                        <p
+                            style="height:40px;margin-top:5px;float: right;font-family: cursive;color: white  ;margin-right: 15px;">
+                            75M MSL
+                        </p>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="pic2">
+        <h2 class="name">
+            2. Taylor Swift
+        </h2>
+        <div class="flip-box">
+            <div class="flip-box-inner">
+                <div class="flip-box-front">
+                    <img src="https://media.cnn.com/api/v1/images/stellar/prod/230316152511-01-taylor-swift-0205.jpg?c=1x1"
+                        alt="Paris" style="width:500px;height:450px">
+                </div>
+                <div class="flip-box-back">
+                    <a href="TaylorSwift.html"> <img
+                            src="https://images.mktw.net/im-735570?width=1280&size=1"
+                            style=" opacity: 0.74;width:500px;height:400px "></a>
+                    <a href="https://www.instagram.com/taylorswift/"> <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png"
+                            style="width:40px;height: 40px;float: left;margin-left: 20px;margin-top: 5px;margin-right: 15px;"></a>
+                    <a href="https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02?si=c1D9yia0S36_6Myr9yJ9dg"> <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Spotify_App_Logo.svg/2048px-Spotify_App_Logo.svg.png"
+                            style="width:40px;height: 40px;float: left;margin-top: 5px;margin-right: 15px;"></a>
+                    <!-- <img src="https://w7.pngwing.com/pngs/231/63/png-transparent-album-computer-icons-music-phonograph-record-design-album-photography-logo.png"
+                            style="width:50px;height: 40px;float: left;margin-top: 5px;margin-right: 15px;"> -->
+                    <a href="https://www.youtube.com/taylorswift"><img
+                            src="https://www.logo.wine/a/logo/YouTube/YouTube-Icon-Full-Color-Logo.wine.svg"
+                            style="width:50px;height: 40px;float: left;margin-top: 5px;margin-right: 15px;"></a>
+                    <p
+                        style="height:40px;margin-top:5px;float: right;font-family: cursive;color: white  ;margin-right: 15px;">
+                        85M MSL
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <div class="pic1">
+        <h2 class="name">
+            3. LISA
+        </h2>
+        <div class="flip-box">
+            <div class="flip-box-inner">
+                <div class="flip-box-front">
+                    <img src="https://leosigh.com/wp-content/uploads/2023/01/LiSA-Lander-album.jpg" alt="Paris"
+                        style="width:500px;height:450px">
+                </div>
+                <div class="flip-box-back">
+                    <a href="Lisa.html"><img
+                            src="https://www.japantimes.co.jp/wp-content/uploads/2021/06/np_file_90865.jpeg"
+                            style=" opacity: 0.75;width:500px;height:400px "></a>
+                    <a href="https://www.instagram.com/xlisa_olivex/"> <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png"
+                            style="width:40px;height: 40px;float: left;margin-left: 20px;margin-top: 5px;margin-right: 15px;"></a>
+                    <a href="https://open.spotify.com/artist/0blbVefuxOGltDBa00dspv"> <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Spotify_App_Logo.svg/2048px-Spotify_App_Logo.svg.png"
+                            style="width:40px;height: 40px;float: left;margin-top: 5px;margin-right: 15px;"></a>
+                    <!-- <img src="https://w7.pngwing.com/pngs/231/63/png-transparent-album-computer-icons-music-phonograph-record-design-album-photography-logo.png"
+                        style="width:50px;height: 40px;float: left;margin-top: 5px;margin-right: 15px;"> -->
+                    <a href="https://www.youtube.com/channel/UCqEfdEvLG5oQWNYlDQrGlKw"><img
+                            src="https://www.logo.wine/a/logo/YouTube/YouTube-Icon-Full-Color-Logo.wine.svg"
+                            style="width:50px;height: 40px;float: left;margin-top: 5px;margin-right: 15px;"></a>
+                    <p
+                        style="height:40px;margin-top:5px;float: right;font-family: cursive;color: white  ;margin-right: 15px;">
+                        4M MSL
+                    </p>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div class="pic2">
+        <h2 class="name">
+            4. Imagine Dragons
+        </h2>
+        <div class="flip-box">
+            <div class="flip-box-inner">
+                <div class="flip-box-front">
+                    <img src="https://www.billboard.com/wp-content/uploads/2022/12/imagine-dragons-Press-Photo-Credit-Eric-Ray-Davidson-2022-billboard-1548.jpg"
+                        alt="Paris" style="width:500px;height:450px">
+                </div>
+                <div class="flip-box-back">
+                    <a href="Dragons.html"> <img
+                        src="https://s.yimg.com/ny/api/res/1.2/DTbE7CVr0IJUmuTJdg83wQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNw--/https://s.yimg.com/os/creatr-uploaded-images/2022-12/255526a0-73ac-11ed-b67f-66f552f41abe"
+                        style=" opacity: 0.75;width:500px;height:400px "></a>
+                    <a href="https://www.instagram.com/imaginedragons/?hl=en"> <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png"
+                            style="width:40px;height: 40px;float: left;margin-left: 20px;margin-top: 5px;margin-right: 15px;"></a>
+                    <a href="https://open.spotify.com/artist/53XhwfbYqKCa1cC15pYq2q?si=uqSUyNF3SLasOSkTIuA6OQ"> <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Spotify_App_Logo.svg/2048px-Spotify_App_Logo.svg.png"
+                            style="width:40px;height: 40px;float: left;margin-top: 5px;margin-right: 15px;"></a>
+                    <!-- <img src="https://w7.pngwing.com/pngs/231/63/png-transparent-album-computer-icons-music-phonograph-record-design-album-photography-logo.png"
+                        style="width:50px;height: 40px;float: left;margin-top: 5px;margin-right: 15px;"> -->
+                    <a href="https://www.youtube.com/channel/UCT9zcQNlyht7fRlcjmflRSA"><img
+                            src="https://www.logo.wine/a/logo/YouTube/YouTube-Icon-Full-Color-Logo.wine.svg"
+                            style="width:50px;height: 40px;float: left;margin-top: 5px;margin-right: 15px;"></a>
+                    <p
+                        style="height:40px;margin-top:5px;float: right;font-family: cursive;color: white  ;margin-right: 15px;">
+                        60M MSL
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="pic1">
+        <h2 class="name">
+            5. Diljit Dosanjh
+        </h2>
+        <div class="flip-box">
+            <div class="flip-box-inner">
+                <div class="flip-box-front">
+                    <img src="https://img.mensxp.com/media/content/2021/Sep/Diljit-Dosanjh1200_6149633bdcc8c.jpeg" alt="Paris"
+                        style="width:500px;height:450px">
+                </div>
+                <div class="flip-box-back">
+                    <a href="diljit.html"><img
+                            src="https://st1.bollywoodlife.com/wp-content/uploads/2022/12/Diljitt.jpg?impolicy=Medium_Widthonly&w=1280&h=900"
+                            style=" opacity: 0.5;width:500px;height:400px "></a>
+                    <a href="https://www.instagram.com/diljitdosanjh/?hl=en"> <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png"
+                            style="width:40px;height: 40px;float: left;margin-left: 20px;margin-top: 5px;margin-right: 15px;"></a>
+                    <a href="https://open.spotify.com/artist/2FKWNmZWDBZR4dE5KX4plR?si=68JAZ6DQTw-f0gS8RofS1Q"> <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Spotify_App_Logo.svg/2048px-Spotify_App_Logo.svg.png"
+                            style="width:40px;height: 40px;float: left;margin-top: 5px;margin-right: 15px;"></a>
+                    <!-- <img src="https://w7.pngwing.com/pngs/231/63/png-transparent-album-computer-icons-music-phonograph-record-design-album-photography-logo.png"
+                        style="width:50px;height: 40px;float: left;margin-top: 5px;margin-right: 15px;"> -->
+                    <a href="https://www.youtube.com/channel/UCZRdNleCgW-BGUJf-bbjzQg"><img
+                            src="https://www.logo.wine/a/logo/YouTube/YouTube-Icon-Full-Color-Logo.wine.svg"
+                            style="width:50px;height: 40px;float: left;margin-top: 5px;margin-right: 15px;"></a>
+                    <p
+                        style="height:40px;margin-top:5px;float: right;font-family: cursive;color: white  ;margin-right: 15px;">
+                        8M MSL
+                    </p>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div class="pic2">
+        <h2 class="name">
+            6. Selena Gomez
+        </h2>
+        <div class="flip-box">
+            <div class="flip-box-inner">
+                <div class="flip-box-front">
+                    <img src="https://pbs.twimg.com/media/FjOt_wHaUAEF751?format=jpg&name=large"
+                        alt="Paris" style="width:500px;height:450px">
+                        <!-- https://pbs.twimg.com/media/FjOt_wHaUAEF751?format=jpg&name=large -->
+                        <!-- http://hollywoodlife.com/wp-content/uploads/2019/07/selena-gomez-3.jpg -->
+                </div>
+                <div class="flip-box-back">
+                    <a href="Selena.html"> <img
+                        src="https://w0.peakpx.com/wallpaper/519/376/HD-wallpaper-selena-gomez-pink-dress-singer-women.jpg"
+                            style=" opacity: 0.75;width:500px;height:400px "></a>
+                    <a href="https://www.instagram.com/selenagomez/"> <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png"
+                            style="width:40px;height: 40px;float: left;margin-left: 20px;margin-top: 5px;margin-right: 15px;"></a>
+                    <a href="https://open.spotify.com/artist/0C8ZW7ezQVs4URX5aX7Kqx?si=TVxrjxibQu-_xWHQnkZQxw"> <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Spotify_App_Logo.svg/2048px-Spotify_App_Logo.svg.png"
+                            style="width:40px;height: 40px;float: left;margin-top: 5px;margin-right: 15px;"></a>
+                    <!-- <img src="https://w7.pngwing.com/pngs/231/63/png-transparent-album-computer-icons-music-phonograph-record-design-album-photography-logo.png"
+                        style="width:50px;height: 40px;float: left;margin-top: 5px;margin-right: 15px;"> -->
+                    <a href="https://www.youtube.com/channel/UCPNxhDvTcytIdvwXWAm43cA"><img
+                            src="https://www.logo.wine/a/logo/YouTube/YouTube-Icon-Full-Color-Logo.wine.svg"
+                            style="width:50px;height: 40px;float: left;margin-top: 5px;margin-right: 15px;"></a>
+                    <p
+                        style="height:40px;margin-top:5px;float: right;font-family: cursive;color: white  ;margin-right: 15px;">
+                        59M MSL
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <p style="color: white; font-size:xx-large  ;padding: 5%; padding-top: 0;font-family:cursive;margin-top:148%;padding-bottom: 0;">
+        MSL-monthly spotify listeners
+    </p>
+    <div class="abt" style="border-top: thick solid white;">
+        <p class="abtext">
+            Welcome to Deathly Decibels - your ultimate destination for all things dark and macabre in the world of
+            music.<br> Discover new and haunting melodies every day, and unleash your inner darkness with us.   
+            Don't forget
+            to rate your favorite songs and help curate the ultimate playlist of deathly decibels.<br> To learn more about
+            our site and the team behind it, visit our About page
+        </p>
+        <p style="font-family:'Cabin Sketch', cursive; color: white; text-align: center; font-size: 50px; margin-top: 0;">
+            JOIN THE DARK SIDE
+        </p>
+        <div style="float: left;  width: 400px;height: 50px;font-size: 45px; margin-top: 0;margin-left: 600px; color: white;text-align: center;">
+            <a href="about.html" style="color: white;font-family:'Acme',sans-serif;" >About Us</a>
+        </div>
+        
+
+    </div>
+    <script src="nav.js"></script>
+      
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

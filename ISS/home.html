@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+body{
+    background-color: black;
+    background-image: linear-gradient(black,rgb(45, 1, 1),black);
+    color: white;
+}
+@import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');
+
+nav {
+    background-color: black;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    /* border: thick solid white; */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    transition: background-color 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid transparent;
+    position: relative;
+    padding-left: 100px;
+        padding-right: 100px;
+}
+
+nav li a:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
+nav li a:hover:after,
+nav li a:focus:after {
+    transform: scale(1);
+    animation-name: pop-out;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes pop-out {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+}
+  .div0 {
+  width: 300px;
+  height: 300px;
+  background-size: cover;
+  position: absolute;
+  margin-left: 200px;
+  
+
+  background-image:url(https://media.cnn.com/api/v1/images/stellar/prod/230316152511-01-taylor-swift-0205.jpg?c=1x1);
+  transition: width 2s, height 2s, transform 2s;
+}
+
+.div0:hover {
+  width: 400px;
+  height: 400px;
+  background-image:url(https://pyxis.nymag.com/v1/imgs/176/e83/74be320c0aad12767ee92b95ce29f1a3c4-taylor-swift.rsquare.h600.jpg);
+  background-size: cover;
+  transform: rotate(360deg);
+}
+.div2 {
+  width: 300px;
+  height: 300px;
+  background-size:cover;
+  position: absolute;
+
+  background-image:url(https://i.pinimg.com/236x/e0/23/ce/e023ce964ebcdf137e974e8e721d2cc9.jpg);
+  transition: width 2s, height 2s, transform 2s;
+}
+
+.div2:hover {
+  width: 400px;
+  height: 400px;
+  background-image:url(https://japannews.yomiuri.co.jp/wp-content/uploads/2021/06/lisa.jpg);
+  background-size: cover;
+  
+  transform: rotate(360deg);
+}
+.div1 {
+  width: 300px;
+  height: 300px;
+  background-size: cover;
+  z-index:2;
+  position: absolute;
+
+  background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Imagine_Dragons_logo_%28WB%29.png/640px-Imagine_Dragons_logo_%28WB%29.png);
+  transition: width 2s, height 2s, transform 2s;
+}
+.div3{
+  width: 300px;
+  height: 300px;
+  background-size:cover;
+  position: absolute;
+  background-image:url(icon.png);
+  background-size: cover;
+
+}
+
+.div1:hover {
+  width: 400px;
+  height: 400px;
+  background-size: cover;
+  background-image:url(https://i.scdn.co/image/ab6761610000e5eb920dc1f617550de8388f368e);
+
+  z-index:2;
+
+  transform: rotate(360deg);
+}
+.div3 {
+  width: 300px;
+  height: 300px;
+  background-size: cover;
+  z-index:2;
+  position: relative;
+  margin-left:600px;
+  margin-top:100px;
+
+}
+
+.abt {
+        height: 300px;
+        margin-top: 20%;
+    }
+    .abtext
+    {
+        color: white;
+        padding: 5px;
+        text-align: center;
+        font-family: 'Acme', sans-serif;
+        font-size: 20px;
+
+    }
+img {
+    width: 300px;
+    height:300px;
+
+  --color: blue; /* the border color */
+  --border: 10px;   /* the border thickness*/
+  --offset: 20px;   /* control the offset*/
+  --gap: 5px;       /* the gap on hover */
+  
+  --_c: var(--color) var(--border), #0000 0 calc(100% - var(--border)),var(--color) 0;
+  --_o: calc(3*var(--offset));
+  padding: 
+    calc(var(--gap) + var(--border))
+    calc(var(--gap) + var(--border) + var(--offset))
+    calc(var(--gap) + var(--border) + var(--offset))
+    calc(var(--gap) + var(--border));
+  background: 
+    linear-gradient(      var(--_c)) var(--_o) var(--_o), 
+    linear-gradient(90deg,var(--_c)) var(--_o) var(--_o);
+  background-size: calc(100% - var(--_o)) calc(100% - var(--_o));
+  background-repeat: no-repeat;
+  filter: grayscale(0.5);
+  transition: .5s;
+  cursor: pointer;
+}
+img:hover {
+  background-position: 0px 0px;
+  background-size: calc(100% - var(--offset)) calc(100% - var(--offset));
+  filter: grayscale(0);
+}
+.glow {
+  font-size: 150px;
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+  font-family: cursive;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #211e1e, 0 0 40px #3d0808, 0 0 50px #410101, 0 0 60px #450303, 0 0 70px #560404;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #f1eded, 0 0 40px #f9f3f9, 0 0 50px #0c090a, 0 0 60px #d3c2cb, 0 0 70px #090406, 0 0 80px #f5f0f3;
+  }
+}
+.kk {
+        display: block;
+        color: #fff;
+        text-align: center;
+        box-shadow: inset 0px 0px 5px 5px white;
+        padding: 20px;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Roboto", sans-serif;
+        transition: background-color 0.3s ease-in-out;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-bottom: 2px solid transparent;
+        position: relative;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    
+
+
+</style>
+<style>
+  
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Ruslan+Display&family=Rye&display=swap');
+  
+  
+    @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Yanone+Kaffeesatz:wght@700&display=swap');
+  </style>
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a class="kk" href="home.html">home</a></li>
+            <li><a href="artist.html">Artists</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a  href="a.html">Search</a></li>
+            <li><a href="playlist.html">Playlist</a><li>
+            <li><a href="artistspotlightserena.html">Artist Spotlight</a></li>
+            
+            <!-- <li><a href="#">Contact</a></li> -->
+        </ul>
+    </nav>
+    <h1 class="glow" style="font-size:150px; text-align: center;">Deathly Decibels</h1>
+
+    <div class="typing" style="min-height: 134px;">
+
+      <h1 class="glow" style="font-size:50px; text-align: center;"></h1>
+
+      <!-- <img src="icon.png"style="width:500px;margin-top:50px;margin-left:600px;z-index: 200;"> -->
+
+  </div>
+
+
+<h1 style="font-size:100px; text-align: center;top: 150px;">Top Artists</h1>
+
+<a href="Dragons.html"><div class="div1" style="margin-left:700px;" ></div></a>
+<a href="TaylorSwift.html"><div class="div0" style="margin-top:00px;margin-left:100px;"></div></a>
+<a href="Lisa.html"><div class="div2" style="margin-left:1300px;"></div></a>
+<h1 style="font-size:100px;margin-top:600px ;text-align: center;">Top Albums</h1>
+<a href="evolve.html"><img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/916R9qiMCOL._SL1500_.jpg" style="margin-left:100px;" ></a>
+<a href="revival.html"><img src="https://i.pinimg.com/originals/45/8f/3f/458f3f417f60eb91be462d204016d9ac.jpg" style="margin-left: 200px;--color:white;"></a>
+<a href="red.html"><img src="https://i.scdn.co/image/ab67616d0000b273318443aab3531a0558e79a4d" style="margin-left: 200px;--color:red;"></a>
+<h1 style="font-size:100px;margin-top:200px ;text-align: center;">Top Songs</h1>
+<img src="https://static.wikia.nocookie.net/selenagomez/images/2/22/Me%26therhythm.jpg/revision/latest/thumbnail/width/360/height/360?cb=20150927142410" style="--color:white; margin-left: 100px;"></a>
+<img src="https://media.newstrack.in/amp/uploads/entertainment-news/regional-cinema-news/Sep/05/big_thumb/DILJIT_5f534efb2e3a9.JPG" style="margin-left: 200px;--color:yellow;">
+<img src="https://upload.wikimedia.org/wikipedia/en/6/66/Imagine_Dragons_Bad_Liar.jpg" style="margin-left: 200px;--color:red;">
+
+
+
+<div class="abt" style="border-top: thick solid white;">
+    <p class="abtext">
+        Welcome to Deathly Decibels - your ultimate destination for all things dark and macabre in the world of
+        music.<br> Discover new and haunting melodies every day, and unleash your inner darkness with us.   
+        Don't forget
+        to rate your favorite songs and help curate the ultimate playlist of deathly decibels.<br> To learn more about
+        our site and the team behind it, visit our About page
+    </p>
+    <p style="font-family:'Cabin Sketch', cursive; color: white; text-align: center; font-size: 50px; margin-top: 0;">
+        JOIN THE DARK SIDE
+    </p>
+    <div style="float: left;  width: 400px;height: 50px;font-size: 45px; margin-top: 0;margin-left: 600px; color: white;text-align: center;">
+        <a href="about.html" style="color: white;font-family:'Acme',sans-serif;" >About Us</a>
+    </div>
+   
+
+
+</div>
+<script src="nav.js"></script>
+
+
+</body>
+</html>

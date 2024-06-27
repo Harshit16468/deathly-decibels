@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+    <style>
+        nav {
+    background-color: black;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    /* border: thick solid white; */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    transition: background-color 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid transparent;
+    position: relative;
+    padding-left: 100px;
+        padding-right: 100px;
+}
+
+nav li a:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
+nav li a:hover:after,
+nav li a:focus:after {
+    transform: scale(1);
+    animation-name: pop-out;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes pop-out {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    background-image: linear-gradient(black,rgb(45, 1, 1),black);
+    color: white;
+}
+@import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');
+
+.c {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    z-index: 1000;
+    display: flex;
+  }
+  .c1 {
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    z-index: 1000;
+    display: flex;
+
+  }
+  .c2 {
+    position: fixed;
+    top: 105%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    z-index: 1000;
+    display: flex;
+
+  }
+  img:hover{
+    transform: scale(1.2);
+    
+  }
+  .glow {
+  font-size: 150px;
+  color: whitesmoke;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+  font-family: cursive;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #211e1e, 0 0 40px #3d0808, 0 0 50px #410101, 0 0 60px #450303, 0 0 70px #560404;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #f1eded, 0 0 40px #f9f3f9, 0 0 50px #0c090a, 0 0 60px #d3c2cb, 0 0 70px #090406, 0 0 80px #f5f0f3;
+  }
+}
+.zoom-in-out-box {
+  width: 650px;
+  height: 650px;
+  background-size: cover;
+  background-image: url(https://hips.hearstapps.com/hmg-prod/images/gettyimages-1198930383-1-1641480150.jpg?crop=0.699xw:1.00xh;0.112xw,0&resize=1200:*);
+  animation: zoom-in-zoom-out 10s ease infinite;
+  border-radius: 400px;
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+.kk {
+        display: block;
+        color: #fff;
+        text-align: center;
+        box-shadow: inset 0px 0px 5px 5px white;
+        padding: 20px;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Roboto", sans-serif;
+        transition: background-color 0.3s ease-in-out;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-bottom: 2px solid transparent;
+        position: relative;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    .rating {
+      unicode-bidi: bidi-override;
+      direction: rtl;
+      text-align: center;
+    }
+    .rating > span:hover:before,
+    .rating > span:hover ~ span:before {
+       content: "\2605";
+       position: absolute;
+       left: 0;
+       color: gold;
+    }
+    .rating > span {
+  display: inline-block;
+  position: relative;
+  width: em;
+}
+.rating > span:hover,
+.rating > span:hover ~ span {
+  color: transparent;
+}
+.star-cb-group {
+      /* remove inline-block whitespace */
+      font-size: 0;
+      /* flip the order so we can use the + and ~ combinators */
+      unicode-bidi: bidi-override;
+      direction: rtl;
+      /* the hidden clearer */
+    }
+    .star-cb-group * {
+      font-size: 2rem;
+    }
+    .star-cb-group > input {
+      display: none;
+    }
+    .star-cb-group > input + label {
+      /* only enough room for the star */
+      display: inline-block;
+      overflow: hidden;
+      text-indent: 9999px;
+      width: 1em;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .star-cb-group > input + label:before {
+      display: inline-block;
+      text-indent: -9999px;
+      content: "☆";
+      color: #888;
+    }
+    .star-cb-group > input:checked ~ label:before, .star-cb-group > input + label:hover ~ label:before, .star-cb-group > input + label:hover:before {
+      content: "★";
+      color: #e52;
+      text-shadow: 0 0 1px #333;
+    }
+    .star-cb-group > .star-cb-clear + label {
+      text-indent: -9999px;
+      width: .5em;
+      margin-left: -.5em;
+    }
+    .star-cb-group > .star-cb-clear + label:before {
+      width: .5em;
+    }
+    .star-cb-group:hover > input + label:before {
+      content: "☆";
+      color: #888;
+      text-shadow: none;
+    }
+    .star-cb-group:hover > input + label:hover ~ label:before, .star-cb-group:hover > input + label:hover:before {
+      content: "★";
+      color: #e52;
+      text-shadow: 0 0 1px #333;
+    }
+    .abt {
+        height: 300px;
+        margin-top: 20%;
+    }
+.abtext
+    {
+        color: white;
+        padding: 5px;
+        text-align: center;
+        font-family: 'Acme', sans-serif;
+        font-size: 20px;
+
+    }
+    #my
+    {
+        zoom: 80%;
+    }
+</style><style>
+  
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap');
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Yanone+Kaffeesatz:wght@700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Ruslan+Display&family=Rye&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap');
+
+  span {
+  font-size: 4em;
+}
+
+td {
+  max-width: 400px;
+  overflow-wrap: break-word; /* set the maximum width for the cell */
+ /* allow the content to wrap to the next line */
+}
+table, td,th{
+  /* border: 1px solid white; */
+  color: white;
+  font-size: 40px;
+
+  padding-right:260px;
+  /* background-color: black; */
+  
+}
+
+
+
+
+    </style>
+    <body>
+        <nav>
+            <ul>
+              <li><a  href="home.html" >home</a></li>
+                <li><a href="artist.html">Artists</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="a.html">Search</a></li>
+                <li><a href="playlist.html">Playlist</a><li>
+                <li><a class="kk" href="artistspotlightserena.html">Artist Spotlight</a></li>
+                
+                <!-- <li><a href="#">Contact</a></li> -->
+            </ul>
+        </nav>
+
+            <!-- <section> -->
+
+                    <h1 class="glow" style="margin-top: 100px;">Selena Gomez</h1>
+ 
+                    <div class="zoom-in-out-box" style="margin-top:50px;margin-left:600px;">
+                      </div>
+                    <div>
+                      <p style="color:wheat;font-size: 25px;margin-top: 100px;">Selena Gomez is an American singer, actress, and producer who rose to fame as a child star on the Disney Channel. She was born on July 22, 1992, in Grand Prairie, Texas. Gomez has pursued a successful music career, releasing several albums and hit singles. Some of her popular songs include Come & Get It, The Heart Wants What It Wants, and Lose You to Love Me.</p> 
+
+                        <!-- <h1 style="top:400px;color: white;position: absolute;margin-left: 900px;font-size: 50px;font-family: 'Cabin Sketch', cursive;">Rating</h1> -->
+                    <form id="my-form" >
+                        <!-- <fieldset> -->
+                            <input id ="name"type="text" placeholder="Name" required style="padding-left:75px; margin-top:120px;margin-left:600px;background-color: #888;font-size: 40px;position:absolute;;border-radius: 20px;border-color:#888;">
+                            <input id ="review"type="text" placeholder="Write your review" style="padding-left:60px;padding-right:20px; position:absolute;margin-top:180px;margin-left:600px;overflow-wrap: break-word;overflow-wrap: break-word;background-color: #888;font-size: 40px;border-radius: 20px;border-color:#888;">
+
+                            <span class="star-cb-group" style="margin-top:250px;margin-left:850px;position: absolute;">
+                            <input type="radio" id="rating-5" name="rating" value="5" />
+                            <label for="rating-5">5</label>
+                            <input type="radio" id="rating-4" name="rating" value="4" checked="checked" />
+                            <label for="rating-4">4</label>
+                            <input type="radio" id="rating-3" name="rating" value="3" />
+                            <label for="rating-3">3</label>
+                            <input type="radio" id="rating-2" name="rating" value="2" />
+                            <label for="rating-2">2</label>
+                            <input type="radio" id="rating-1" name="rating" value="1" />
+                            <label for="rating-1">1</label>
+                            <input type="radio" id="rating-0" name="rating" value="0" class="star-cb-clear" />
+                            <label for="rating-0">0</label>
+                          </span>
+
+                        <!-- </fieldset> -->
+                        <button id ="submit" type="button" onclick ="myfunction()"style="padding-left:20px;padding-right:20px;border-radius:20px;margin-left: 850px;margin-top:320px;font-size:30px;background-color:gray;border-color:#888;">Submit</button>
+                      </form> 
+
+                    </div>
+
+                    <table id="myTable"style="margin-top:100px;margin-left:300px;border-radius:50px">
+                      <tr >
+                        <th >Name</th>
+                        <th >Rating</th>
+                        <th>Review</th>
+                      </tr>
+                    </table>
+                    <h1 class style="color:white;font-size: 60px;margin-top:200px;margin-left:630px;">New Song in</h1>
+                    <h1 id ="timer" style="color:wheat;font-size: 60px;margin-left:630px;"></h1>
+
+            <script src="nav1.js"></script>
+            
+      <div class="abt" style="border-top: thick solid white;">
+        <p class="abtext">
+            Welcome to Deathly Decibels - your ultimate destination for all things dark and macabre in the world of
+            music.<br> Discover new and haunting melodies every day, and unleash your inner darkness with us.   
+            Don't forget
+            to rate your favorite songs and help curate the ultimate playlist of deathly decibels.<br> To learn more about
+            our site and the team behind it, visit our About page
+        </p>
+        <p style="font-family:'Cabin Sketch', cursive; color: white; text-align: center; font-size: 50px; margin-top: 0;">
+            JOIN THE DARK SIDE
+        </p>
+        <div style="float: left;  width: 400px;height: 50px;font-size: 45px; margin-top: 0;margin-left: 700px; color: white;text-align: center;">
+          <a href="about.html" style="color: white;font-family:'Acme',sans-serif;" >About Us</a>
+      </div>
+
+
+    </div>
+    </body>
+</html>

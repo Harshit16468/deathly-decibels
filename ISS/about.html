@@ -1,0 +1,348 @@
+<html>
+
+<head>
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');
+
+    nav {
+        background-color: black;
+        height: 60px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        /* border: thick solid white; */
+    }
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    nav li {
+        display: inline-block;
+    }
+
+    nav li a {
+        display: block;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Roboto", sans-serif;
+        transition: background-color 0.3s ease-in-out;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-bottom: 2px solid transparent;
+        position: relative;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    .kk {
+        display: block;
+        color: #fff;
+        text-align: center;
+        box-shadow: inset 0px 0px 5px 5px white;
+        padding: 20px;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Roboto", sans-serif;
+        transition: background-color 0.3s ease-in-out;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-bottom: 2px solid transparent;
+        position: relative;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    .bordered {
+  position: absolute;
+  bottom: -3px;
+  left: -20px;
+  right: -20px;
+  height: 3px;
+  background-color: white;
+}
+
+    
+
+    nav li a:after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        transform: scale(0);
+        transition: transform 0.3s ease-in-out;
+    }
+
+
+    nav li a:hover:after,
+    nav li a:focus:after {
+        transform: scale(1);
+        animation-name: pop-out;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes pop-out {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale(1.2);
+        }
+    }
+
+
+
+
+    /* background: url('') no-repeat center center fixed; */
+    /* Additional styles for improved aesthetics */
+    /* body {
+        background-image: url('https://wallpaper-house.com/data/out/8/wallpaper2you_233380.jpg');
+        background-size: cover;
+        position: relative; */
+    /* Make the body element a positioning context */
+    /* } */
+
+    .overlay {
+        /* position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Set the overlay color and opacity */
+        /* filter: blur(5px); */
+        /* Add the blur effect */
+        /* z-index: -1; */
+        /* Put the overlay behind the navigation bar */
+        /* background-image: url('logo.png'); */
+        background-size: cover;
+        /* background-color: black; */
+        /* background-attachment: fixed; */
+        /* background: no-repeat center center fixed; */
+        filter: blur(2px);
+        /* Change the blur radius to your preference */
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .stalbum {
+        /* border: thick solid red; */
+        /* float: left; */
+        margin-top: 15%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10PX;
+        /* justify-content: center; */
+        align-items: center;
+        height: 400px;
+        /* text-decoration: ; */
+    }
+
+    .stalbum1 {
+        /* border: thick solid red; */
+        /* float: left; */
+        margin-top: 10%;
+        padding-left: 7%;
+        /* display: flex;
+        flex-wrap: wrap; */
+        /* padding: 10PX; */
+        /* justify-content: center; */
+        /* align-items: center; */
+        height: 100px;
+        /* border: thick red solid; */
+        text-align: left;
+        /* text-decoration: ; */
+    }
+
+    .abt {
+        height: 300px;
+        margin-top: 20%;
+    }
+
+    body {
+        background-color: black;
+        background-image: linear-gradient(black, rgb(45, 1, 1), black);
+
+
+    }
+
+    .pop {
+        cursor: pointer;
+        display: block;
+        -webkit-transition-property: all;
+        -webkit-transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease;
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+    }
+
+    .pop:hover {
+        border: solid thick pink;
+        transform: scale(1.3);
+        filter: grayscale(0%);
+        -webkit-filter: grayscale(0%);
+        transform: r;
+    }
+
+    .abtext {
+        color: white;
+        padding: 5px;
+        text-align: center;
+        font-family: 'Acme', sans-serif;
+        font-size: 20px;
+
+    }
+    
+
+    /* @import url('https://fonts.googleapis.com/css2?family=Rye&display=swap'); */
+</style>
+<style>
+    /* @import url('https://fonts.googleapis.com/css2?family=Rye&display=swap'); */
+
+    @import url('https://fonts.googleapis.com/css2?family=Ruslan+Display&family=Rye&display=swap');
+</style>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
+</style>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+</style>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap');
+    .glow {
+  font-size: 150px;
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+</style>
+
+<body>
+    <nav>
+        
+        <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li ><a href="artist.html">ARTISTS</a></li>
+            <li><a class="kk" href="about.html">About</a></li>
+            <li><a  href="a.html">Search</a></li>
+            <li><a href="playlist.html">Playlist</a><li>
+            <li><a href="artistspotlightserena.html">Artist Spotlight</a></li>
+        </ul>
+    </nav>
+    <div class="overlay"></div>
+    <div class="stalbum1">
+        <p class="glow";style="color:white;font-size: 100px; margin-top: 0;font-family:'Rye';text-align: center; ">
+            About Us
+        </p>
+
+    </div>
+    <div class="conti">
+        <p style="color: white; font-size:xx-large  ;padding: 5%;padding-bottom: 0;font-family: cursive;">
+            Welcome to Deathly Decibels - your ultimate destination for all things dark and macabre in the world of
+            music. Our platform is designed to showcase the most haunting and eerie melodies from different genres of
+            music, and provide a community for fans of the darker side of music to connect and share their passion.
+        </p>
+        <div
+            style="height: 700px;width: 700px; float: left; margin: 10%; margin-right: 0; margin-top: 0%; margin-bottom: 0;">
+            <img src="logo.png" style="height: 700px;width: 700px; ">
+        </div>
+        <div style="height: 600px;width: 450px; float: right; margin-top: 0%;;margin-right: 150px; margin-top: 0;">
+
+            <p style="color: white; font-size:xx-large  ;padding: 5%; padding-top: 0;font-family:cursive;">
+                However, that's not all we're about. While our platform is themed around dark and eerie music, we also
+                celebrate other genres of music that are not necessarily considered "dark". Our goal is to provide a
+                space where music enthusiasts can come together to discover and share their favorite music, regardless
+                of genre.
+
+            </p><br>
+        </div>
+        <div style="margin-top: 50%;">
+            <!-- <br> -->
+            <p style="color: white; font-size:xx-large  ;padding: 5%; padding-top: 0;font-family:cursive;">
+                Our rating system is a key feature of our platform that allows you to contribute to our community
+                playlist
+                of deathly decibels, as well as other playlists that reflect different genres of music. You can rate
+                songs
+                based on their overall quality, their relevance to a particular genre, and their ability to evoke
+                emotions.
+                As you rate more songs, you'll see your contribution to our playlists grow and evolve, reflecting your
+                unique taste and perspective.
+                <br>
+                We would like to take this opportunity to thank you for being a part of the Deathly Decibels community.
+                Your support and contribution to our platform is what keeps us going.
+                <br><br>
+                Our team is made up of passionate music enthusiasts who are dedicated to promoting and celebrating music
+                of all genres. Here are the members of our team:
+            </p>
+            <div
+                style="height:400px;width: 300px; margin: 5%;margin-left: 300px;float: left;margin-top: 0;">
+                <img src="me.jpg" style="height: 300px;width: 300px; margin-bottom: 0;">
+                <p style="color: white;font-size: 30px;text-align: center;margin-top: 15;">
+                    Karan Nijhawan
+                    <br>2022101122
+                    <br>karan.nijhawan@students.iiit.ac.in
+                </p>
+            </div>
+            <div
+                style="height:400px;width: 300px; margin: 5%;margin-right: 300px;float: right;margin-top: 0;">
+                <img src="hari.jpg" style="height: 300px;width: 300px; margin-bottom: 0;">
+
+                <p style="color: white;font-size: 30px;text-align: center;margin-top: 15;">
+                    Harshit Gupta
+                    <br>2022101124
+                    <br>harshit.gupta@students.iiit.ac.in
+                </p>
+            </div>
+            <p style="color: white; font-size:xx-large  ;padding: 5%; padding-top: 0;font-family:cursive; margin-top: 35%;padding-bottom: 0;">
+                We are committed to providing you with the best possible experience on our platform, and we welcome your
+                feedback and suggestions. Thank you for being a part of our community, and we hope you enjoy exploring
+                the world of music with us!
+            </p>
+            <p style="font-family:'Cabin Sketch', cursive; color: white; text-align: center; font-size: 50px; margin-top: 0;">
+                JOIN THE DARK SIDE
+            </p>
+
+            
+
+
+        </div>
+
+
+    </div>
+
+
+<script src="nav.js"></script>
+
+</body>
+
+</html>

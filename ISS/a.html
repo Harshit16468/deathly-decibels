@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>iTunes API Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Yanone+Kaffeesatz:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ruslan+Display&family=Rye&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap');
+</style>
+
+<body>
+    <nav>
+        <ul>
+          <li><a  href="home.html" >home</a></li>
+            <li><a href="artist.html">Artists</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a class="kk" href="a.html">Search</a></li>
+            <li><a href="artistspotlightserena.html">Artist Spotlight</a></li>
+            
+        </ul>
+    </nav>    <div class="background-image"></div>
+    <h1 class="glow">iTunes API Search</h1>
+    <div style=" text-align: center;">
+        <label for="searchInput" class="top-label" id="first-tl">Search Term:</label>
+        <input type="text" id="searchInput" class="searchboxes" placeholder="Enter search term" style="width: 150px;">
+        <label for="maxDuration" class="top-label">Max Duration (in minutes):</label>
+        <input type="number" id="maxDuration" class="searchboxes" placeholder="">
+        <label for="explicitness" class="top-label" >Explicitness:</label>
+        <select id="explicitness" class="searchboxes" style="padding: 0px; width: 150px;padding-left: 20px;">
+            <option value="">All</option>
+            <option value="explicit">Explicit</option>
+            <option value="notExplicit">Not Explicit</option>
+        </select>
+    </div><br>
+    <div style=" text-align: center; margin-top: 20px;">
+
+        <button style="text-align: center;" onclick="search()">Search</button>
+        <button onclick="clearFilters()">Clear Filters</button>
+    </div>
+    <ul id="resultsList"></ul>
+    <div class="abt" style="border-top: thick solid white;">
+        <p class="abtext">
+            Welcome to Deathly Decibels - your ultimate destination for all things dark and macabre in the world of
+            music.<br> Discover new and haunting melodies every day, and unleash your inner darkness with us.   
+            Don't forget
+            to rate your favorite songs and help curate the ultimate playlist of deathly decibels.<br> To learn more about
+            our site and the team behind it, visit our About page
+        </p>
+        <p style="font-family:'Cabin Sketch', cursive; color: white; text-align: center; font-size: 50px; margin-top: 0;">
+            JOIN THE DARK SIDE
+        </p>
+        <div style="float: left;  width: 400px;height: 50px;font-size: 45px; margin-top: 0;margin-left: 700px; color: white;text-align: center;">
+          <a href="about.html" style="color: white;font-family:'Acme',sans-serif;" >About Us</a>
+      </div>
+
+    <script>
+        function search() {
+            // Get filter values from input fields
+            var searchTerm = document.getElementById('searchInput').value;
+            var maxDuration = document.getElementById('maxDuration').value;
+            var explicitness = document.getElementById('explicitness').value;
+
+            // Clear previous results
+            document.getElementById('resultsList').innerHTML = '';
+
+            document.getElementById('resultsList').innerHTML = 'Loading...';
+
+            // Make API request to iTunes API with search term
+            var apiUrl = 'https://itunes.apple.com/search?term=' + searchTerm + '&limit=10';
+            $.getJSON(apiUrl, function (data) {
+                document.getElementById('resultsList').innerHTML = '';
+                if (data.resultCount === 0) {
+                    // No results found
+                    document.getElementById('resultsList').innerHTML = 'No results found.';
+                } else {
+                    // Loop through results and apply filters
+                    var filteredResults = data.results.filter(function (result) {
+                        // Filter by explicitness
+                        if (explicitness && explicitness !== result.trackExplicitness) {
+                            return false;
+                        }
+                        // Filter by duration
+                        if (maxDuration && maxDuration * 60000 < result.trackTimeMillis) {
+                            return false;
+                        }
+                        return true;
+                    });
+
+                    if (filteredResults.length === 0) {
+                        // No filtered results found
+                        document.getElementById('resultsList').innerHTML = 'No results found.';
+                    } else {
+                        // Loop through filtered results and display details
+                        filteredResults.forEach(function (result) {
+                            var li = document.createElement('li');
+                            var trackName = document.createElement('p');
+                            var artistName = document.createElement('p');
+                            var albumPoster = document.createElement('img');
+                            var audio = document.createElement('audio');
+                            var contaim = document.createElement('div');
+                            var contailm = document.createElement('div');
+                            contaim.classList.add('Cont');
+                            contailm.classList.add('Cont_op');
+
+                            trackName.textContent =result.trackName;
+                            trackName.classList.add('trackname');
+                            artistName.textContent = '~'+ result.artistName;
+                            artistName.classList.add('artistname');
+                            albumPoster.src = result.artworkUrl100;
+                            albumPoster.classList.add('albumcover');
+                            audio.classList.add('audio_play')
+
+                            if (result.previewUrl) {
+                                // If audio clip is available, create audio element with controls
+                                audio.src = result.previewUrl;
+                                audio.controls = true;
+                                audio.preload = 'auto';
+                                audio.style.display = 'block';
+                            } else {
+                                // If audio clip is not available, display message
+                                audio.textContent = 'Audio clip not available';
+                            }
+                            // contaim.appendChild(contailm);
+                            contaim.appendChild(albumPoster);
+                            contaim.appendChild(trackName);
+                            contaim.appendChild(artistName);
+                            
+                            contaim.appendChild(audio);
+                            // contaim.appendChild(li);
+                            document.getElementById('resultsList').appendChild(contaim);
+                        });
+                    }
+                }
+            });
+        }
+
+        function clearFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('maxDuration').value ='';
+            document.getElementById('explicitness').value ='';
+        }
+
+    </script>
+<script src="nav.js"></script>
+</body>
+
+</html>
